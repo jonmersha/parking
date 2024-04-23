@@ -10,24 +10,18 @@ class ParkingHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GetBuilder<LocationController>(
-        builder: (videoController) {
-          return videoController.isLoaded
+        builder: (locationController) {
+          return locationController.isLoaded
               ? RefreshIndicator(
             onRefresh: refreshList,
             child: ListView.builder(
-                itemCount: videoController.list.length,
+                itemCount: locationController.list.length,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     onTap: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) => UTB(
-                      //         videoUrl:
-                      //         '${videoController.list[index].videoUrl}'),
-                      //   ),
-                      // );
+
                     },
-                    child: Text('')
+                    child: Text(locationController.list[index].lOCATIONSNAME)
                     // SizedBox(
                     //   height: 390,
                     //   child: VideoCard(

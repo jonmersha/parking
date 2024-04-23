@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:parking/controller/location_controller.dart';
 import 'package:parking/helper/theme.dart';
 import 'package:parking/repository/api_client.dart';
 import 'package:parking/repository/repo_service.dart';
@@ -12,6 +13,11 @@ import 'helper/constant_path.dart';
 void main() {
   Get.lazyPut(() => ApIClient(appBaseUrl: BASE_URL));
   Get.lazyPut(() => Services(apIClient: Get.find()));
+
+  Get.lazyPut(() => LocationController(serviceRepo: Get.find()));
+  Get.find<LocationController>().getList(PARKING);
+
+
 
   runApp(const ParkingApp());
 }
