@@ -5,8 +5,9 @@ import 'package:parking/helper/theme.dart';
 import 'package:parking/repository/api_client.dart';
 import 'package:parking/repository/repo_service.dart';
 import 'package:parking/view/driver/driver_home.dart';
-import 'package:parking/view/home/home.dart';
-import 'package:parking/view/parkinglocation/parking_home.dart';
+import 'package:parking/view/home/home2.dart';
+import 'package:parking/view/reservation/reservation.dart';
+import 'package:parking/view/users/profile.dart';
 
 import 'helper/constant_path.dart';
 
@@ -31,12 +32,14 @@ class ParkingApp extends StatelessWidget {
       initialRoute: "/",
       theme: theme,
       routes: {
-        "/home": (context) => const HomePage(),
+        "/home": (context) =>  const HomeScreen(),
         "/driver": (context) => const DriverHome(),
-        "/parking": (context) => const ParkingHome(),
+        "/parking": (context) =>  const HomeScreen(),
+        "/profile": (context) =>   const ProfileScreen(),
+        "/reservation": (context) =>    ReservationScreen(),
       },
-      home: const Scaffold(
-        body: HomePage(),
+      home:  const Scaffold(
+        body: HomeScreen(),
       ),
     );
   }
