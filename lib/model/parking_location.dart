@@ -7,13 +7,13 @@ class ParkingLocation {
     if (json['Data'] != null) {
       data = <Data>[];
       json['Data'].forEach((v) {
-        data!.add(new Data.fromJson(v));
+        data!.add(Data.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (this.data != null) {
       data['Data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -44,12 +44,12 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['ID'] = this.iD;
-    data['DEVCIE_ID'] = this.dEVCIEID;
-    data['LOCATIONS_NAME'] = this.lOCATIONSNAME;
-    data['LATITUDE'] = this.lATITUDE;
-    data['LOBGITUDE'] = this.lOBGITUDE;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['ID'] = iD;
+    data['DEVCIE_ID'] = dEVCIEID;
+    data['LOCATIONS_NAME'] = lOCATIONSNAME;
+    data['LATITUDE'] = lATITUDE;
+    data['LOBGITUDE'] = lOBGITUDE;
     return data;
   }
 }

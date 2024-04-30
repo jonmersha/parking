@@ -10,7 +10,4 @@ class Services extends GetxService {
     return await apIClient.getData(path);
   }
 
-  Future<Response> getVideosByID(String path, int id) async {
-    return await apIClient.getData('$path/?id=$id');
-  }
 }

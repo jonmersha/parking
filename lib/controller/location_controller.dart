@@ -12,7 +12,7 @@ class LocationController extends GetxController {
   bool get isLoaded => _isLoaded;
 
   Future<void> getList(String path) async {
-    Response response = await serviceRepo.getAll(path);
+    Response response = await serviceRepo.getAll('$path/get');
 //print(response.body);
     if (response.statusCode == 200) {
       _list = [];

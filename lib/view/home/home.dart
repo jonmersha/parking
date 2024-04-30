@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
               alignment: Alignment.center,
               decoration: buttonDecoration(),
               child: Text(title, style:
-              TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+              const TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
               ),
             ),
           );
